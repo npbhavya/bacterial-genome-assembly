@@ -1,1 +1,4 @@
-# work-in-progress
+# GFA graph traversal 
+
+Work in progress 
+
