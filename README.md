@@ -33,6 +33,7 @@ The snakemake script runs QC and unicycler on all the genomes sequenced. Below i
 - Assembly - Unicycler (https://github.com/rrwick/Unicycler)
 
 Run the script by 
+
   `souce activate <conda env>`
   
   `snakemake -s snakefile-ED`
@@ -53,6 +54,7 @@ After assembly, the genomes can still be partially fragemented. In this case, if
 Here we applied a depth first based traversal algorithm (dfs) to walk through the graph (gfa file) that lists the contigs as nodes, and all possible connection between then as edges. The jupyter notebook contains a script that makes sure all the nodes are traveresed at least once, and the circle back to the beginning. Therefore, completing the genome. 
 
 **Run gfa traversal**
+
   `jupyter notebook`
   
 Change the name of the chromosome running through the python script and the output name. 
