@@ -34,19 +34,18 @@ The snakemake script runs QC and unicycler on all the genomes sequenced. Below i
 
 Run the script by 
 
-    `souce activate <conda env>`
-  
-    `snakemake -s snakefile-ED`
+    souce activate <conda env>
+    snakemake -s snakefile-ED
   
   To run a specific rule within snakefile
   
-    `snakemake -s snakefile-ED <rulename>`
+    snakemake -s snakefile-ED <rulename>
 
 The above steps were run on a cluster. After assembly, the assembly.gfa plots were visualized on Banadge plots to confirm if the assembly formed complete, circular genomes. 
 
 Assembly statictics can be run uaing quast,
 
-    `quast.py assembly.fasta -o <assembly-quast-output>` 
+    quast.py assembly.fasta -o <assembly-quast-output> 
 
 ### gfa graph traversal 
 After assembly, the genomes can still be partially fragemented. In this case, if the number of contigs are few (worked with less than 30 for now), but the bandage plot shows that chromosomes are complete and circular, we can traverse through the gfa file to complete the genome. 
@@ -55,7 +54,7 @@ Here we applied a depth first based traversal algorithm (dfs) to walk through th
 
 **Run gfa traversal**
 
-    `jupyter notebook`
+    jupyter notebook
   
 Change the name of the chromosome running through the python script and the output name. 
 Run the script for only one chromosome within a genome at a time. If the genome includes multiple chromosomes they need to be separated out different fasta files and each run through the script separately. 
