@@ -28,6 +28,26 @@ Fastq read file (post basecalling)
 
 **wrote a job script and submitted to SLURM job scedule** 
 
+    #!/bin/bash
+    #SBATCH --job-name=nala0006_assembly
+    #SBATCH --mail-user=email
+    #SBATCH --mail-type=ALL
+    #SBATCH --output=%x-%j.out.txt
+    #SBATCH --error=%x-%j.err.txt
+    #SBATCH --time=0-24
+    #SBATCH --ntasks=10
+    #SBATCH --cpus-per-task=1
+    #SBATCH --mem=250G
+
+    module add miniconda/3.0 
+    source activate genome-assembly
+
+    cd Acinetobacter
+
+    export LC_ALL=en_US.UTF-8
+    filtlong --min_length 1000 --keep_percent 95 recalled.fastq >Acinetobacter.fastq 
+    unicycler -l Acinetobacter.fastq -o assembly --no_correct 
+    
 **Output** 
 
 The output if the script ran successfully, will generate an output directory with assembly.fasta and assembly.gfa files.
