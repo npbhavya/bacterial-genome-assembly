@@ -83,6 +83,9 @@ Finally long read technologies are error prone, which can annotate lots of pseud
 
 **Setting up job script to submit to SLURM job scheduler**
 
+    `source activate genome-assembly`\
+    `snakemake `
+    
 **Output**
 
 In ideel/hists/<output filename>.png plots
