@@ -19,6 +19,7 @@ Documentation on deepthought - https://deepthoughtdocs.flinders.edu.au/en/latest
   `conda install -c conda-forge -c bioconda`
   
 **Input files** 
+
 Fastq read file (post basecalling)
 
 **Steps run in the job script below**
@@ -28,11 +29,15 @@ Fastq read file (post basecalling)
 **wrote a job script and submitted to SLURM job scedule** 
 
 **Output** 
+
 The output if the script ran successfully, will generate an output directory with assembly.fasta and assembly.gfa files.
 
 ## Bandage plot
 Download the assembly.gfa file- output from Unicycler output locally to visualize on Bandage- https://rrwick.github.io/Bandage/
 Upload the assembly.gfa file to visulaize the genome assembled
+
+
+
 
 ## Assembly quality
 Ideally, the assembly will generate complet, circular chromosomes along with complete, circular plasmid sequences if present in the genome sequenced. 
@@ -59,6 +64,7 @@ Finally long read technologies are error prone, which can annotate lots of pseud
 **Setting up job script to submit to SLURM job scheduler**
 
 **Output**
+
 In ideel/hists/<output filename>.png plots
 
 Ideally - Should have a lot of proteins with 1:1 ratio on the histograms (one tall peek)and no other peaks at all
