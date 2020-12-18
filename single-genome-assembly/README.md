@@ -11,11 +11,11 @@ Documentation on deepthought - https://deepthoughtdocs.flinders.edu.au/en/latest
 
 **create a new conda environment**
 
-  `conda create -y -n genome-assembly`
-  `source activate genome-assembly`
-  `conda install -c bioconda unicycler`
-  `conda install -c bioconda filtlong`
-  `conda install -c conda-forge mamba`
+  `conda create -y -n genome-assembly` \
+  `source activate genome-assembly`\
+  `conda install -c bioconda unicycler`\
+  `conda install -c bioconda filtlong`\
+  `conda install -c conda-forge mamba`\
   `conda install -c conda-forge -c bioconda`
   
 **Input files** 
