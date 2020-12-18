@@ -5,10 +5,12 @@ Documentation on deepthought - https://deepthoughtdocs.flinders.edu.au/en/latest
 
 ## Genome assembly steps
 
-*loading the environment* 
+**loading the environment**
+
   `module load Miniconda/3.0`
 
 **create a new conda environment**
+
   `conda create -y -n genome-assembly`
   `source activate genome-assembly`
   `conda install -c bioconda unicycler`
@@ -16,11 +18,11 @@ Documentation on deepthought - https://deepthoughtdocs.flinders.edu.au/en/latest
   `conda install -c conda-forge mamba`
   `conda install -c conda-forge -c bioconda`
   
-* Input files* 
+**Input files** 
 Fastq read file (post basecalling)
 
-**Steps run in the job script below **
--QC using filtlong - https://github.com/rrwick/Filtlong
+**Steps run in the job script below**
+- QC using filtlong - https://github.com/rrwick/Filtlong
 - Assembly using Unicycler - https://github.com/rrwick/Unicycler
 
 **wrote a job script and submitted to SLURM job scedule** 
@@ -29,7 +31,6 @@ Fastq read file (post basecalling)
 The output if the script ran successfully, will generate an output directory with assembly.fasta and assembly.gfa files.
 
 ## Bandage plot
-
 Download the assembly.gfa file- output from Unicycler output locally to visualize on Bandage- https://rrwick.github.io/Bandage/
 Upload the assembly.gfa file to visulaize the genome assembled
 
@@ -50,15 +51,16 @@ Finally long read technologies are error prone, which can annotate lots of pseud
   `cd ideel`
   `#Download uniport database and format UniProt TREMBL and saved as uniprot_trembl.diamond.dmnd`
   
-** Running the scripts
+**Running the scripts**
 
-Input files - place the assembly.fasta in the directory ideel/genomes
-Database - place uniprot_trembl.diamond.dmnd in ideel/uniprot_trembl.diamond.dmnd
+**Input files** - place the assembly.fasta in the directory ideel/genomes
+**Database** - place uniprot_trembl.diamond.dmnd in ideel/uniprot_trembl.diamond.dmnd
 
-*Setting up job script to submit to SLURM job scheduler*
+**Setting up job script to submit to SLURM job scheduler**
 
-** Output **
-In ideel/hists/*.png plots
+**Output**
+In ideel/hists/<output filename>.png plots
+
 Ideally - Should have a lot of proteins with 1:1 ratio on the histograms (one tall peek)and no other peaks at all
 The other peaks represent proteins that were only partially aligned against the proteins in the reference database, and can be pseudogenes or genes with frameshifts. Detailed explanation in the blog mentioned above.
 
