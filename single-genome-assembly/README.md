@@ -29,7 +29,7 @@ Fastq read file (post basecalling)
 **wrote a job script and submitted to SLURM job scedule** 
 
     #!/bin/bash
-    #SBATCH --job-name=nala0006_assembly
+    #SBATCH --job-name=assembly
     #SBATCH --mail-user=email
     #SBATCH --mail-type=ALL
     #SBATCH --output=%x-%j.out.txt
