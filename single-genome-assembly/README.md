@@ -83,8 +83,22 @@ Finally long read technologies are error prone, which can annotate lots of pseud
 
 **Setting up job script to submit to SLURM job scheduler**
 
-    source activate genome-assembly
-    snakemake 
+        #!/bin/bash
+        #SBATCH --job-name=frameshift_test
+        #SBATCH --mail-user=email
+        #SBATCH --mail-type=ALL
+        #SBATCH --output=ideel/%x-%j.out.txt
+        #SBATCH --error=ideel/%x-%j.err.txt
+        #SBATCH --time=4:00:00
+        #SBATCH --ntasks=6
+        #SBATCH --cpus-per-task=1
+        #SBATCH --mem=50G
+
+        module add miniconda/3.0 
+        source activate genome-assembly
+
+        cd ideel
+        snakemake --cores 4
     
 **Output**
 
