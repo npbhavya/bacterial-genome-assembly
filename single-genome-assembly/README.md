@@ -39,7 +39,7 @@ Fastq read file (post basecalling)
     #SBATCH --cpus-per-task=1
     #SBATCH --mem=250G
 
-    module add miniconda/3.0 
+    module load miniconda/3.0 
     source activate genome-assembly
 
     cd Acinetobacter
@@ -94,7 +94,7 @@ Finally long read technologies are error prone, which can annotate lots of pseud
         #SBATCH --cpus-per-task=1
         #SBATCH --mem=50G
 
-        module add miniconda/3.0 
+        module load miniconda/3.0 
         source activate genome-assembly
 
         cd ideel
