@@ -7,16 +7,16 @@ Documentation on deepthought - https://deepthoughtdocs.flinders.edu.au/en/latest
 
 **loading the environment**
 
-  `module load Miniconda/3.0`
+    module load Miniconda/3.0
 
 **create a new conda environment**
 
-  `conda create -y -n genome-assembly` \
-  `source activate genome-assembly`\
-  `conda install -c bioconda unicycler`\
-  `conda install -c bioconda filtlong`\
-  `conda install -c conda-forge mamba`\
-  `conda install -c conda-forge -c bioconda`
+    conda create -y -n genome-assembly
+    source activate genome-assembly
+    conda install -c bioconda unicycler
+    conda install -c bioconda filtlong
+    conda install -c conda-forge mamba
+    conda install -c conda-forge -c bioconda
   
 **Input files** 
 
@@ -68,14 +68,14 @@ Finally long read technologies are error prone, which can annotate lots of pseud
 
 **Setting up the script to test frameshifts
 
-  `git clone https://github.com/mw55309/ideel.git`\
-  `source activate genome-assembly`\
-  `conda install -c bioconda prodigal`\
-  `conda install -c bioconda diamond`\
-  `conda install -c r r`\
-  `cd ideel`\
-  `#Download uniport database and format UniProt TREMBL and saved as uniprot_trembl.diamond.dmnd`
-  
+    git clone https://github.com/mw55309/ideel.git
+    source activate genome-assembly
+    conda install -c bioconda prodigal
+    conda install -c bioconda diamond
+    conda install -c r r
+    cd ideel
+    #Download uniport database and format UniProt TREMBL and saved as uniprot_trembl.diamond.dmnd
+
 **Running the scripts**
 
 **Input files** - place the assembly.fasta in the directory ideel/genomes
