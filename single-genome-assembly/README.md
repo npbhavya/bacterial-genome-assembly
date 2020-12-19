@@ -68,12 +68,12 @@ Finally long read technologies are error prone, which can annotate lots of pseud
 
 **Setting up the script to test frameshifts
 
-  `git clone https://github.com/mw55309/ideel.git`\
-  `source activate genome-assembly`\
-  `conda install -c bioconda prodigal`\
-  `conda install -c bioconda diamond`\
-  `conda install -c r r`\
-  `cd ideel`\
+  `git clone https://github.com/mw55309/ideel.git`
+  `source activate genome-assembly`
+  `conda install -c bioconda prodigal`
+  `conda install -c bioconda diamond`
+  `conda install -c r r`
+  `cd ideel`
   `#Download uniport database and format UniProt TREMBL and saved as uniprot_trembl.diamond.dmnd`
   
 **Running the scripts**
@@ -83,8 +83,8 @@ Finally long read technologies are error prone, which can annotate lots of pseud
 
 **Setting up job script to submit to SLURM job scheduler**
 
-    `source activate genome-assembly`\
-    `snakemake `
+    source activate genome-assembly
+    snakemake 
     
 **Output**
 
