@@ -115,6 +115,8 @@ Finally long read technologies are error prone, which can annotate lots of pseud
     conda install -c bioconda prodigal
     conda install -c bioconda diamond
     conda install -c conda-forge r-base
+    conda install -c edurand r-cairo
+    conda install -c conda-forge libjpeg-turbo
     cd ideel
     #Download uniport database and format UniProt TREMBL and saved as uniprot_trembl.diamond.dmnd
 
