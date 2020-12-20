@@ -6,11 +6,14 @@ Documentation on deepthought - https://deepthoughtdocs.flinders.edu.au/en/latest
 ## fast5 basecalling using guppy-basecaller 
 
 **Download** 
+
 Available on Nanopore community website. Download the CPU or GPU version
 
         tar -xvzf <binary file>
 
 **Run as script**
+
+Save the below script as a job file, changing email, and filepaths. 
 
         #!/bin/bash
 
@@ -32,7 +35,12 @@ Available on Nanopore community website. Download the CPU or GPU version
         cd <path to run the script and find the files>
         guppy_basecaller --input_path <directory with fast5 files> --save_path <output path> --flowcell FLO-             FLG001 --kit SQK-RBK004 --device auto
 
+To submit the script 
+
+        sbatch <job script.sh>
+        
 **Output files**
+
 fastq files saved in output path defined with multiple fastq files.
 
         cat <output path>/*.fastq >> sample_basecalled.fastq 
