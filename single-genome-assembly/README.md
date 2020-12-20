@@ -3,6 +3,42 @@
 
 Documentation on deepthought - https://deepthoughtdocs.flinders.edu.au/en/latest/index.html
 
+## fast5 basecalling using guppy-basecaller 
+
+**Download** 
+Available on Nanopore community website. Download the CPU or GPU version
+
+        tar -xvzf <binary file>
+
+**Run as script**
+
+        #!/bin/bash
+
+        #SBATCH --job-name=guppy_basecaller
+        #SBATCH --mail-user=email
+        #SBATCH --mail-type=ALL
+        #SBATCH --output=%x-%j.out.txt
+        #SBATCH --error=%x-%j.err.txt
+        #SBATCH --time=1-0
+        #SBATCH --ntasks=1
+        #SBATCH --cpus-per-task=1
+        #SBATCH --mem=50G
+        #SBATCH --gres=gpu:1
+        #SBATCH --partition=hpc_gpu
+
+        module load cuda10.0/nsight/10.0.130
+        export PATH=~/ont-guppy/bin:$PATH
+
+        cd <path to run the script and find the files>
+        guppy_basecaller --input_path <directory with fast5 files> --save_path <output path> --flowcell FLO-             FLG001 --kit SQK-RBK004 --device auto
+
+**Output files**
+fastq files saved in output path defined with multiple fastq files.
+
+        cat <output path>/*.fastq >> sample_basecalled.fastq 
+        
+This is the input fastq files for genome assembly
+
 ## Genome assembly steps
 
 **loading the environment**
@@ -52,11 +88,9 @@ Fastq read file (post basecalling)
 
 The output if the script ran successfully, will generate an output directory with assembly.fasta and assembly.gfa files.
 
-## Bandage plot
+## Visualization using Bandage plot
 Download the assembly.gfa file- output from Unicycler output locally to visualize on Bandage- https://rrwick.github.io/Bandage/
 Upload the assembly.gfa file to visulaize the genome assembled
-
-
 
 
 ## Assembly quality
