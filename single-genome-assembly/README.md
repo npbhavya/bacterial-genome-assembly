@@ -151,7 +151,52 @@ In ideel/hists/<output filename>.png plots
 Ideally - Should have a lot of proteins with 1:1 ratio on the histograms (one tall peek)and no other peaks at all
 The other peaks represent proteins that were only partially aligned against the proteins in the reference database, and can be pseudogenes or genes with frameshifts. Detailed explanation in the blog mentioned above.
 
+## Polishing assembly 
+
+If there are Illumina reads available, they can be used to polish the assembly generated from nanopore read only assembly. 
+
+**Install**
+
+                conda install -c bioconda pilon
+
+**Input reads**
+
+assembled genome from nanopore only assembly - save as *consensus.fasta*
+Illumina reads - In this case they were single reads (NOT paired end, for paired end command, https://github.com/rrwick/Trycycler/wiki/Polishing-after-Trycycler) - save file as *input_reads.fastq*
+
+**Scripts** 
+This script has to be run a couple times, so change the input and output names. Generally I run this script until there are no changes defined in the <output genome name>.changes file.
+
+                #!/bin/bash
+                #SBATCH --job-name=pilon
+                #SBATCH --mail-user=email
+                #SBATCH --mail-type=ALL
+                #SBATCH --output=%x-%j.out.txt
+                #SBATCH --error=%x-%j.err.txt
+                #SBATCH --time=0-4
+                #SBATCH --ntasks=10
+                #SBATCH --cpus-per-task=1
+                #SBATCH --mem=200G
+
+                cd <file path>
+
+                module add bowtie/2.3.5.1
+                module add samtools
+
+                bowtie2-build <input genome> <input genome name>
+                bowtie2 -U input_reads.fastq -x <input genome name> --threads 10 -I 0 -X 52 --local --very-sensitive-local | samtools sort > illumina_alignments.bam
+                samtools index illumina_alignments.bam
+
+                module add miniconda/3.0
+                source activate genome
+                pilon --genome <input genome name> --bam illumina_alignments.bam --output <output genome name> --changes
+                #rm *.bam *.bam.bai *.bt2
+                sed -i 's/_pilon//' <output genome name>
 
 
+**Output** 
 
+<output genome name>.fasta
+
+Run ideel on this genome as well, to determine how the genome quality improved. 
 
