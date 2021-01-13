@@ -33,7 +33,7 @@ Save the below script as a job file, changing email, and filepaths.
         export PATH=~/ont-guppy/bin:$PATH
 
         cd <path to run the script and find the files>
-        guppy_basecaller --input_path <directory with fast5 files> --save_path <output path> --flowcell FLO-             FLG001 --kit SQK-RBK004 --device auto
+        guppy_basecaller --input_path <directory with fast5 files> --save_path <output path> --flowcell FLO-           FLG001 --kit SQK-RBK004 --device auto
 
 To submit the script 
 
