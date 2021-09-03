@@ -3,12 +3,13 @@
 ## Input file
 Input files are nanopore reads in fast5 format, save the fast5 files to the fast5 directory
 
-## Conda env
+## Conda environment
 The workflow should be run in conda environment "genome-assembly"
 
 	source activate genome-assembly
 
-Next run the snakemake workflow, the workflow starts with 
+## Workflow
+First run the snakemake workflow, the workflow starts with 
 - fast5 to fastq conversion
 - quality control to remove short reads and low quality reads 
 - assembly using unicycler, flye, raven and miniasm 
@@ -22,14 +23,18 @@ After this step though, the rest of the steps are run on cpu, so they can be run
 
 Final output is directory "viral_contigs", that saves only the viral contigs from each assembly
 
-## Manual steps
+## Trycycler step to build a consensus
 
 Next, fasta files in "viral_contigs" that are empty are removed
 
 	for f in viral_contigs/* ; do  if [ -s "$f" ]; then  echo "not empty"; else rm -rf "$f" ; fi; done 
 
+Running trycycler in a new directory
 
-Manualy running trycycler, https://github.com/rrwick/Trycycler/wiki/Clustering-contigs onwards till generating consensus assembly
+	mkdir trycycler
+	cd trycycler
+
+Manually running trycycler, https://github.com/rrwick/Trycycler/wiki/Clustering-contigs onwards till generating consensus assembly
 Save the consensus assembly in viral_contigs directory at the end
 
 ## Continue snakemake workflow
@@ -44,8 +49,8 @@ Take a look at the output file, quality_summary_all.tsv to pick the assembler th
 - most closest to the genome length to predicted genome length or the longest
 - look at genome quality, number of genes and viral genes
 
-
-Saved the final assembly - with representation of one assembly per genome 
+Saved the final assembly - with representation of one assembly per genome to directory 
+"select_one_assembler"
 
 ### Polishing the assemblies 
 
@@ -55,15 +60,11 @@ Medaka polishing, done manually
 	medaka_consensus -i filtlong/Lysate_Run_Bb18-filtlong.fastq -d select_one_assembler/Lysate_Run_Bb18-flye.fasta -o medaka/Lysate_Run_Bb18-medaka -m r941_min_sup_g507  -t 10 
 
 
-Pilon polishing if Illumina reads available, Bu20, Bu07, Bu18, Bu19. Followd the pilon tutorial in https://github.com/rrwick/Trycycler/wiki/Polishing-after-Trycycler
-Saved the output to directory "polishing"/*.fasta
-
 ## rerunning checkv again on the polished genomes 
 Running snakemake, checkv output
 
 	source activate genome-assembly
 	snakemake -s snakemake-3 --cores 10
-
 
 This runs checkv on polished genomes
 rename the contigs
