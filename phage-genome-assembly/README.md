@@ -20,6 +20,8 @@ Next run the snakemake workflow, the workflow starts with
 The cores is set to 4 since guppy is run on gpu nodes which runs only if there are 4 samples running at once. 
 After this step though, the rest of the steps are run on cpu, so they can be run with higher number of cores.
 
+Final output is directory "viral_contigs", that saves only the viral contigs from each assembly
+
 ## Manual steps
 
 Next, fasta files in "viral_contigs" that are empty are removed
