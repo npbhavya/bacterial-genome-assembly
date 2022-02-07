@@ -1,3 +1,3 @@
 If you use atavide, please cite
 
-Bhavya, P. and Edwards R.A., Micrbial genome assembly. 
+Bhavya, P. and Edwards R.A., Microbial genome assembly. 
