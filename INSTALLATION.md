@@ -22,10 +22,10 @@ Activate the environment
   
 Install dependencies 
 
-  `conda install -c bioconda prinseq`
-  `conda install -c bioconda unicycler`
-  `conda install -c bioconda flye`
-  `conda install -c bioconda filtlong`
-  `conda install -c conda-forge mamba`
-  `conda install -c bioconda snakemake`
+  `conda install -c bioconda prinseq` \
+  `conda install -c bioconda unicycler` \
+  `conda install -c bioconda flye` \
+  `conda install -c bioconda filtlong` \
+  `conda install -c conda-forge mamba` \
+  `conda install -c bioconda snakemake` \
   `pip install quast`
