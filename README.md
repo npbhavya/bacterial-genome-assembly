@@ -1,5 +1,6 @@
+[![DOI](https://zenodo.org/badge/291788219.svg)](https://zenodo.org/badge/latestdoi/291788219)
+
 # Genome assembly
-work in progress 
 
 ### Description 
 In this project the cultured single cell bacterial genomes were sequenced using either Illumina or Nanopore sequencing, or both. The genomes were assembled using mutliple sequencing technologies, so we applied hybrid assembly methods to assemble complete genomes. 
