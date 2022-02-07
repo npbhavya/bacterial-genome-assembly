@@ -1,3 +1,1 @@
-If you use atavide, please cite
-
-Bhavya, P. and Edwards R.A., Microbial genome assembly. 10.5281/zenodo.6001191
+If you use atavide, please cite DOI:10.5281/zenodo.6001191
