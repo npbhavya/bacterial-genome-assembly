@@ -12,15 +12,16 @@ In this project the cultured single cell bacterial genomes were sequenced on bot
   - Jupyter notebook  https://jupyter.org/
   - Bandage plots https://rrwick.github.io/Bandage/   
   - within conda env 
-  `conda install -c bioconda prinseq` \
-  `conda install -c bioconda unicycler` \
-  `conda install -c bioconda flye` \
-  `conda install -c bioconda filtlong` \
-  `conda install -c conda-forge mamba` \
-  `conda install -c bioconda snakemake` \
-  `conda install -c conda-forge raven` \
-  `conda install -c bioconda miniasm` \
-  `pip install quast`
+      
+        conda install -c bioconda prinseq
+        conda install -c bioconda unicycler
+        conda install -c bioconda flye
+        conda install -c bioconda filtlong
+        conda install -c conda-forge mamba
+        conda install -c bioconda snakemake
+        conda install -c conda-forge raven
+        conda install -c bioconda miniasm
+        pip install quast
    
 ### Input files 
 The input files should be placed in two directories 
