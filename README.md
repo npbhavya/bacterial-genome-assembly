@@ -64,7 +64,7 @@ Assembly statictics can be run using quast,
     quast.py assembly.fasta -o <assembly-quast-output> 
 
 After assembly, the assembly.gfa plots were visualized on Banadge plots to confirm if the assembly formed complete, circular genomes. Below is an example of a good assembly, where the graph shows one circular contig was assembled.  
-![image](https://user-images.githubusercontent.com/8825721/158039332-fddca173-8fa5-427f-97bc-b851ba8942cb.png)
+<img width="313" alt="image" src="https://user-images.githubusercontent.com/8825721/158039332-fddca173-8fa5-427f-97bc-b851ba8942cb.png">
 
 
 ### gfa graph traversal 
