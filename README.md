@@ -131,6 +131,7 @@ Finally long read technologies are error prone, which can annotate lots of pseud
     snakemake --cores 4
     
 In the case that there are very few frameshifts in the genome, there will be a tall peak in the graph at x axis 1 suggesting most of the genes in the assemly mapped exactly to proteins to the genes in the database, as shown below. 
+
 <img width="355" alt="image" src="https://user-images.githubusercontent.com/8825721/158039939-a65ea44b-eac3-4831-bb0f-4a2379235244.png">
 
 ### Alternative assembly programs to test
