@@ -18,3 +18,6 @@
 
     cd <path to run the script and find the files>
     guppy_basecaller --input_path <directory with fast5 files> --save_path <output path> --flowcell FLO-FLG001 --kit SQK-RBK004 --device auto
+    
+    ## save the output to one file
+    cat <output path>/*.fastq >> sample_basecalled.fastq 
