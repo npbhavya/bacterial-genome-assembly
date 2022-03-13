@@ -141,3 +141,6 @@ In cases where there are only a few fragments as shown above in the graph, its p
     flye --nano-raw <nanopore reads after QC> --threads 10 --plasmids --out-dir flye-assembly 
     miniasm_and_minipolish.sh <nanopore reads after QC> 10 >miniasm_minipolish_assembly.gfa 
     raven --threads 10 <nanopore reads after QC> >raven_assembly
+
+### Rscripts used to plot graphs of genomes assembled
+These scripts help plot heatmaps, dendrograms etc that are useful graphs to visuzlize all the genes/ proteins in the genomes are saved to the directory Rscripts.
