@@ -11,6 +11,11 @@ In this project the cultured single cell bacterial genomes were sequenced on bot
   - miniconda https://docs.conda.io/en/latest/miniconda.html
   - Jupyter notebook  https://jupyter.org/
   - Bandage plots https://rrwick.github.io/Bandage/   
+  - create a new conda env
+ 
+        conda create --name genome-assembly
+        conda activate genome-assembly
+  
   - within conda env 
       
         conda install -c bioconda prinseq
