@@ -1,0 +1,8 @@
+README.md
+setup.py
+bacterial_genome.egg-info/PKG-INFO
+bacterial_genome.egg-info/SOURCES.txt
+bacterial_genome.egg-info/dependency_links.txt
+bacterial_genome.egg-info/entry_points.txt
+bacterial_genome.egg-info/requires.txt
+bacterial_genome.egg-info/top_level.txt

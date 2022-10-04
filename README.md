@@ -1,5 +1,7 @@
 [![DOI](https://zenodo.org/badge/291788219.svg)](https://zenodo.org/badge/latestdoi/291788219)
 
+version 2.0 
+
 # Genome assembly
 
 ### Description 
@@ -11,22 +13,16 @@ In this project the cultured single cell bacterial genomes were sequenced on bot
   - miniconda https://docs.conda.io/en/latest/miniconda.html
   - Jupyter notebook  https://jupyter.org/
   - Bandage plots https://rrwick.github.io/Bandage/   
-  - create a new conda env
- 
-        conda create --name genome-assembly
-        conda activate genome-assembly
   
-  - within conda env 
-      
-        conda install -c bioconda prinseq
-        conda install -c bioconda unicycler
-        conda install -c bioconda flye
-        conda install -c bioconda filtlong
-        conda install -c conda-forge mamba
-        conda install -c bioconda snakemake
-        conda install -c conda-forge raven
-        conda install -c bioconda miniasm
-        pip install quast
+#### Installing the program 
+
+    ```
+    git clone https://github.com/npbhavya/bacterial-genome-assembly.git
+    cd bacterial-genome-assembly
+    python setup.py install 
+    #confirm the workflow is installed by running the below command 
+    bacterial_genome --help
+    ```
    
 ### Input files 
 The input files should be placed in two directories 

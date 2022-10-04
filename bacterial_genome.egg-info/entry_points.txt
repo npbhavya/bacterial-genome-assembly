@@ -1,0 +1,2 @@
+[console_scripts]
+bacterial_genome = bacterial_genome.__main__:main
