@@ -1,3 +1,4 @@
 # Snakemake config
 input:
 output: 'bacterial_genome.out'
+temp_dir: "tmp"

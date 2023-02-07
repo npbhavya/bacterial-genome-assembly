@@ -63,8 +63,11 @@ Available targets:
 
 @click.command(epilog=help_msg_extra, context_settings=dict(help_option_names=["-h", "--help"], ignore_unknown_options=True))
 @click.option('--input', '_input', help='Input file/directory', type=str, required=True)
+@click.option('--preprocess', help="sequencing method", default='paired', show_default=True,
+                     type=click.Choice(['paired', 'longread']))
+
 @common_options
-def run(_input, configfile, output, threads, use_conda, conda_prefix, snake_default,
+def run(_input, preprocess, configfile, output, threads, use_conda, conda_prefix, snake_default,
         snake_args, **kwargs):
     """Run bacterial-genome"""
 
@@ -74,11 +77,13 @@ def run(_input, configfile, output, threads, use_conda, conda_prefix, snake_defa
     # Config to add or update in configfile
     merge_config = {
         'input': _input,
-        'output': output,}
+        'output': output,
+        'sequencing': preprocess,
+        }
 
     # run!
     run_snakemake(
-        snakefile_path=snake_base(os.path.join('workflow', 'Snakefile')),   # Full path to Snakefile
+        snakefile_path=snake_base(os.path.join('workflow', 'run.smk')),   # Full path to Snakefile
         configfile=configfile,
         merge_config=merge_config,
         threads=threads,
