@@ -15,7 +15,15 @@ In this project the cultured single cell bacterial genomes were sequenced on bot
   - Bandage plots https://rrwick.github.io/Bandage/   
   
 #### Installing the program 
+Start with setting up a conda environment 
 
+    ```
+    conda create -n bacteria-assembly
+    conda activate bacteria-assembly
+    mamba install -c bioconda snakemake 
+    
+    ```
+    
     ```
     git clone https://github.com/npbhavya/bacterial-genome-assembly.git
     cd bacterial-genome-assembly
