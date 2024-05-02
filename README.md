@@ -2,6 +2,7 @@
 
 # Genome assembly
 
+Most of these steps have been updated and written into a snakemake workflow - https://github.com/npbhavya/sphaehost
 ### Description 
 In this project the cultured single cell bacterial genomes were sequenced on both Illumina and Nanopore sequencing. This repository holds the scripts and commands used to assemble these bacterial genomes to complete circular chromosomes. The scripts are saved as job scripts that can be submitted to SLURM job scheduler on high performace clusters and as snakemake workflow. 
 
